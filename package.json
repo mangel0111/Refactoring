@@ -1,0 +1,29 @@
+{
+  "name": "refactoring",
+  "version": "1.0.0",
+  "description": "Refactoring following Refactoring Improving the design of the exisiting code 2nd",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:mutants": "stryker run"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@stryker-mutator/core": "^1.3.1",
+    "@stryker-mutator/html-reporter": "^1.3.1",
+    "@stryker-mutator/javascript-mutator": "^1.3.1",
+    "@stryker-mutator/jest-runner": "^1.3.1",
+    "babel-jest": "^24.7.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.7.1",
+    "prettier": "^1.18.2"
+  },
+  "author": "Miguel Angel",
+  "license": "ISC"
+}
