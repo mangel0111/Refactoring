@@ -15,5 +15,57 @@
         "audience": 40
       }
     ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "hamlet",
+        "audience": 29
+      },
+      {
+        "playID": "as­like",
+        "audience": 19
+      },
+      {
+        "playID": "othello",
+        "audience": 28
+      }
+    ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "hamlet",
+        "audience": 30
+      },
+      {
+        "playID": "as­like",
+        "audience": 20
+      },
+      {
+        "playID": "othello",
+        "audience": 30
+      }
+    ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "cats",
+        "audience": 30
+      }
+    ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "hamlet",
+        "audience": 30
+      }
+    ]
   }
 ]

@@ -25,5 +25,10 @@
     "prettier": "^1.18.2"
   },
   "author": "Miguel Angel",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ]
+  }
 }
