@@ -1,4 +1,4 @@
-import Statement from "./print-bills";
+import Statement from "./statement";
 import invoices from "./invoices.json";
 import plays from "./plays.json";
 
