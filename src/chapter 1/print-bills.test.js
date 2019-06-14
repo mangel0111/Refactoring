@@ -9,6 +9,7 @@ describe("print bills", () => {
     const formattedResponseAudienceOnTheLimitWithJustOne = `Statement for BigCo\n Hamlet: $400.00 (30 seats)\nAmount owed is $400.00\nYou earned 0 credits\n`;
     const formattedResponseAudienceLowerTheLimitWithJustOne = `Statement for BigCo\n Hamlet: $400.00 (29 seats)\nAmount owed is $400.00\nYou earned 0 credits\n`;
     const formattedResponseAudienceHigherTheLimitWithJustOne = `Statement for BigCo\n Hamlet: $410.00 (31 seats)\nAmount owed is $410.00\nYou earned 1 credits\n`;
+    const formattedResponseAudienceHigherTheLimitWithJustOneHTML = `<h1>Statement for BigCo</h1>\n<table>\n<tr><th>play</th><th>seats</th><th>cost</th></tr> <tr><td>Hamlet</td><td>31</td><td>$41,000.00</td></tr>\n</table>\n<p>Amount owed is <em>$41,000.00</em></p>\n<p>You earned <em>undefined</em> credits</p>\n`;
 
     it("should print the bills when the performance was high", () => {
         const invoice = invoices[0];
@@ -66,5 +67,13 @@ describe("print bills", () => {
         const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseAudienceHigherTheLimitWithJustOne);
+    })
+
+    it("should verify and render HTML when one play have the audience higher to the limit", () => {
+        const invoice = invoices[6];
+
+        const bills = new Statement(invoice, plays).renderBills();
+
+        expect(bills).toEqual(formattedResponseAudienceHigherTheLimitWithJustOneHTML);
     })
 })
