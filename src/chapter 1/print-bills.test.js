@@ -1,4 +1,4 @@
-import printBills from "./print-bills";
+import Statement from "./print-bills";
 import invoices from "./invoices.json";
 import plays from "./plays.json";
 
@@ -13,7 +13,7 @@ describe("print bills", () => {
     it("should print the bills when the performance was high", () => {
         const invoice = invoices[0];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponse);
     });
@@ -21,7 +21,7 @@ describe("print bills", () => {
     it("should print the bills when the performance was lower", () => {
         const invoice = invoices[1];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseWithLowersLimit);
     })
@@ -29,7 +29,7 @@ describe("print bills", () => {
     it("should print the bills when the performance is the limits", () => {
         const invoice = invoices[2];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseOnTheLimit);
     })
@@ -37,7 +37,7 @@ describe("print bills", () => {
     it("should fails when the play is not correct", () => {
         const invoice = invoices[3];
         try {
-            printBills(invoice, plays);
+            new Statement(invoice, plays).printBills();
             error(1).toEqual(2);
         } catch (error) {
             expect(error.message).toEqual("unknown type: musical");
@@ -47,7 +47,7 @@ describe("print bills", () => {
     it("should verify when one play have the audience equal to the limit", () => {
         const invoice = invoices[4];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseAudienceOnTheLimitWithJustOne);
     });
@@ -55,7 +55,7 @@ describe("print bills", () => {
     it("should verify when one play have the audience lower to the limit", () => {
         const invoice = invoices[5];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseAudienceLowerTheLimitWithJustOne);
     })
@@ -63,7 +63,7 @@ describe("print bills", () => {
     it("should verify when one play have the audience higher to the limit", () => {
         const invoice = invoices[6];
 
-        const bills = printBills(invoice, plays);
+        const bills = new Statement(invoice, plays).printBills();
 
         expect(bills).toEqual(formattedResponseAudienceHigherTheLimitWithJustOne);
     })
