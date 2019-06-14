@@ -67,5 +67,23 @@
         "audience": 30
       }
     ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "hamlet",
+        "audience": 29
+      }
+    ]
+  },
+  {
+    "customer": "BigCo",
+    "performances": [
+      {
+        "playID": "hamlet",
+        "audience": 31
+      }
+    ]
   }
 ]
