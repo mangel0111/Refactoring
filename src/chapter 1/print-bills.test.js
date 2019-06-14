@@ -44,7 +44,7 @@ describe("print bills", () => {
         }
     })
 
-    it.only("should verify when one play have the audience equal to the limit", () => {
+    it("should verify when one play have the audience equal to the limit", () => {
         const invoice = invoices[4];
 
         const bills = printBills(invoice, plays);
